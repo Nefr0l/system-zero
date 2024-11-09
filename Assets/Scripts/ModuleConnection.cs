@@ -3,17 +3,29 @@ using UnityEngine;
 
 namespace Classes
 {
-    [Serializable]
     public class ModuleConnection : MonoBehaviour
     {
         public GameObject ConnectionTo;
         public GameObject ObjectToTurnOn;
         public float RequiredDistance;
         public bool NeedsToBeSmaller;
-        public bool IsActive;
 
         private float actualDistance;
-        
+        private GameManager gameManager;
+        private LineRenderer line;
+        private ModuleMove moduleMove;
+
+        private void Start()
+        {
+            gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+            moduleMove = GetComponent<ModuleMove>();
+            
+            line = gameObject.AddComponent<LineRenderer>();
+            line.startWidth = 0.08f;
+            line.endWidth = line.startWidth;
+            line.material = gameManager.lineMaterial;
+        }
+
         public bool IsConnected()
         {
             actualDistance = Vector2.Distance(gameObject.transform.position, ConnectionTo.transform.position);
@@ -23,10 +35,15 @@ namespace Classes
 
         public void Update()
         {
-            if (IsActive)
+            if (moduleMove.isBeingDragged)
             {
-                Debug.DrawLine(transform.position, ConnectionTo.transform.position,
-                    IsConnected() ? Color.green : Color.red);
+                line.enabled = true;
+                line.SetPositions(new [] { gameObject.transform.position, ConnectionTo.transform.position });
+                line.material.SetColor("_Color", IsConnected() ? gameManager.lineColorConnected : gameManager.lineColorDisconnected);
+            }
+            else
+            {
+                line.enabled = false;
             }
         }
     }

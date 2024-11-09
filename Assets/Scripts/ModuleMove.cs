@@ -3,27 +3,30 @@ using UnityEngine;
 
 public class ModuleMove : MonoBehaviour
 {
+    public bool isBeingDragged;
+    
     private float offset;
     private GameManager gameManager;
 
     private void Start()
     {
-        offset = 0.5f; // todo: make this half of player's width
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        offset = gameManager.borderOffset;
     }
 
     private void OnMouseDown()
     {
-        GetComponent<ModuleConnection>().IsActive = true;
+        isBeingDragged = true;
     }
 
     private void OnMouseUp()
     {
-        GetComponent<ModuleConnection>().IsActive = false;
+        isBeingDragged = false;
     }
 
     private void OnMouseDrag()
     {
+        // Object drag
         Vector2 cursorPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint);
         
