@@ -7,6 +7,8 @@ public class ModuleMove : MonoBehaviour
     
     private float offset;
     private GameManager gameManager;
+    
+    // add canMove field
 
     private void Start()
     {

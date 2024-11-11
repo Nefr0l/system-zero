@@ -14,11 +14,13 @@ namespace Classes
         private GameManager gameManager;
         private LineRenderer line;
         private ModuleMove moduleMove;
+        private Progressbar progressbar;
 
         private void Start()
         {
             gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
             moduleMove = GetComponent<ModuleMove>();
+            progressbar = ObjectToTurnOn.GetComponent<Progressbar>();
             
             line = gameObject.AddComponent<LineRenderer>();
             line.startWidth = 0.08f;
@@ -26,11 +28,11 @@ namespace Classes
             line.material = gameManager.lineMaterial;
         }
 
-        public bool IsConnected()
+        public bool IsUnconnected()
         {
             actualDistance = Vector2.Distance(gameObject.transform.position, ConnectionTo.transform.position);
-            return (NeedsToBeSmaller && actualDistance < RequiredDistance) ||
-                    (!NeedsToBeSmaller && actualDistance > RequiredDistance);
+            return (NeedsToBeSmaller && actualDistance > RequiredDistance) ||
+                    (!NeedsToBeSmaller && actualDistance < RequiredDistance);
         }
 
         public void Update()
@@ -39,7 +41,10 @@ namespace Classes
             {
                 line.enabled = true;
                 line.SetPositions(new [] { gameObject.transform.position, ConnectionTo.transform.position });
-                line.material.SetColor("_Color", IsConnected() ? gameManager.lineColorConnected : gameManager.lineColorDisconnected);
+                line.material.SetColor("_Color", IsUnconnected() ? gameManager.lineColorDisconnected : gameManager.lineColorConnected);
+                
+                if (IsUnconnected()) progressbar.MarkCompleted();
+                if (IsUnconnected() == false) progressbar.MarkUncompleted();
             }
             else
             {
