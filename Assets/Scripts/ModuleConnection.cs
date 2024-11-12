@@ -1,54 +1,44 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Classes
 {
+    [Serializable]
     public class ModuleConnection : MonoBehaviour
     {
+        public GameObject ConnectionFrom;
         public GameObject ConnectionTo;
         public GameObject ObjectToTurnOn;
         public float RequiredDistance;
         public bool NeedsToBeSmaller;
 
-        private float actualDistance;
         private GameManager gameManager;
-        private LineRenderer line;
-        private ModuleMove moduleMove;
-        private Progressbar progressbar;
+        private ModuleDistanceCheck check1;
+        private ModuleDistanceCheck check2;
+        private SpriteRenderer progressbarSprite;
 
-        private void Start()
+        private void Awake()
         {
+            check1 = ConnectionFrom.AddComponent<ModuleDistanceCheck>();
+            check1.Connection = this;
+
+            check2 = ConnectionTo.AddComponent<ModuleDistanceCheck>();
+            check2.Connection = this;
+
             gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-            moduleMove = GetComponent<ModuleMove>();
-            progressbar = ObjectToTurnOn.GetComponent<Progressbar>();
-            
-            line = gameObject.AddComponent<LineRenderer>();
-            line.startWidth = 0.08f;
-            line.endWidth = line.startWidth;
-            line.material = gameManager.lineMaterial;
+            progressbarSprite = ObjectToTurnOn.GetComponent<SpriteRenderer>();
         }
-
-        public bool IsUnconnected()
+        
+        public void CheckConnection()
         {
-            actualDistance = Vector2.Distance(gameObject.transform.position, ConnectionTo.transform.position);
-            return (NeedsToBeSmaller && actualDistance > RequiredDistance) ||
-                    (!NeedsToBeSmaller && actualDistance < RequiredDistance);
-        }
-
-        public void Update()
-        {
-            if (moduleMove.isBeingDragged)
+            if (check1.IsConnected() || check2.IsConnected())
             {
-                line.enabled = true;
-                line.SetPositions(new [] { gameObject.transform.position, ConnectionTo.transform.position });
-                line.material.SetColor("_Color", IsUnconnected() ? gameManager.lineColorDisconnected : gameManager.lineColorConnected);
-                
-                if (IsUnconnected()) progressbar.MarkCompleted();
-                if (IsUnconnected() == false) progressbar.MarkUncompleted();
+                progressbarSprite.sprite = gameManager.progressbarCompleted;
             }
             else
             {
-                line.enabled = false;
+                progressbarSprite.sprite = gameManager.progressbarUncompleted;
             }
         }
     }
