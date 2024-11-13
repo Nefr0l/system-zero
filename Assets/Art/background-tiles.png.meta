@@ -113,7 +113,7 @@ TextureImporter:
       name: background-tiles_0
       rect:
         serializedVersion: 2
-        x: 80
+        x: 0
         y: 0
         width: 80
         height: 80
@@ -134,7 +134,7 @@ TextureImporter:
       name: background-tiles_1
       rect:
         serializedVersion: 2
-        x: 160
+        x: 80
         y: 0
         width: 80
         height: 80
@@ -155,7 +155,7 @@ TextureImporter:
       name: background-tiles_2
       rect:
         serializedVersion: 2
-        x: 240
+        x: 160
         y: 0
         width: 80
         height: 80
@@ -176,7 +176,7 @@ TextureImporter:
       name: background-tiles_3
       rect:
         serializedVersion: 2
-        x: 320
+        x: 240
         y: 0
         width: 80
         height: 80
@@ -197,7 +197,7 @@ TextureImporter:
       name: background-tiles_4
       rect:
         serializedVersion: 2
-        x: 400
+        x: 320
         y: 0
         width: 80
         height: 80
@@ -218,7 +218,7 @@ TextureImporter:
       name: background-tiles_5
       rect:
         serializedVersion: 2
-        x: 480
+        x: 400
         y: 0
         width: 80
         height: 80
@@ -239,7 +239,7 @@ TextureImporter:
       name: background-tiles_6
       rect:
         serializedVersion: 2
-        x: 560
+        x: 480
         y: 0
         width: 80
         height: 80
@@ -260,7 +260,7 @@ TextureImporter:
       name: background-tiles_7
       rect:
         serializedVersion: 2
-        x: 640
+        x: 560
         y: 0
         width: 80
         height: 80
@@ -281,7 +281,7 @@ TextureImporter:
       name: background-tiles_8
       rect:
         serializedVersion: 2
-        x: 720
+        x: 640
         y: 0
         width: 80
         height: 80
@@ -302,7 +302,7 @@ TextureImporter:
       name: background-tiles_9
       rect:
         serializedVersion: 2
-        x: 800
+        x: 720
         y: 0
         width: 80
         height: 80
@@ -323,7 +323,7 @@ TextureImporter:
       name: background-tiles_10
       rect:
         serializedVersion: 2
-        x: 880
+        x: 800
         y: 0
         width: 80
         height: 80
@@ -344,7 +344,7 @@ TextureImporter:
       name: background-tiles_11
       rect:
         serializedVersion: 2
-        x: 960
+        x: 880
         y: 0
         width: 80
         height: 80
@@ -357,90 +357,6 @@ TextureImporter:
       bones: []
       spriteID: 6cb2a86317f6be74d8bc69e11fd5c12f
       internalID: -1369346921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background-tiles_12
-      rect:
-        serializedVersion: 2
-        x: 1040
-        y: 0
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6c8fa59c49e329868393412a01b0a13
-      internalID: 2090103019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background-tiles_13
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 0
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d007a4e20b584fa3a0ce4d08d0a0c9f
-      internalID: 366173723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background-tiles_14
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 0
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68eadb5287170c8cb99f2f3bd9948cf4
-      internalID: -202165380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background-tiles_15
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7719c78c4df94c4fbde5586985ccd56
-      internalID: -94324038
       vertices: []
       indices: 
       edges: []
@@ -460,10 +376,6 @@ TextureImporter:
       background-tiles_1: 729312818
       background-tiles_10: -266898687
       background-tiles_11: -1369346921
-      background-tiles_12: 2090103019
-      background-tiles_13: 366173723
-      background-tiles_14: -202165380
-      background-tiles_15: -94324038
       background-tiles_2: 414947006
       background-tiles_3: 401336506
       background-tiles_4: 1011988851
