@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     // Level management
     public List<GameObject> Levels; // to be continued
+    public bool IsWin;
     
     // Drag and drop boundaries values
     public float topBorder;
@@ -21,4 +23,9 @@ public class GameManager : MonoBehaviour
     // Other values
     public Sprite progressbarCompleted;
     public Sprite progressbarUncompleted;
+
+    private void Start()
+    {
+        IsWin = false;
+    }
 }

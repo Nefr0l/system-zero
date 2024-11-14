@@ -16,13 +16,12 @@ namespace Classes
         private void Start()
         {
             gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+            moduleMove = GetComponent<ModuleMove>();
             
             line = gameObject.AddComponent<LineRenderer>();
             line.startWidth = 0.08f;
             line.endWidth = line.startWidth;
             line.material = gameManager.lineMaterial;
-            
-            moduleMove = GetComponent<ModuleMove>();
         }
 
         public bool IsConnected()

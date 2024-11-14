@@ -42,6 +42,9 @@ public class ModuleMove : MonoBehaviour
         if (cursorY < gameManager.downBorder + offset) objectPosition.y = gameManager.downBorder + offset;
         if (cursorY > gameManager.topBorder - offset) objectPosition.y = gameManager.topBorder - offset;
 
-        transform.position = objectPosition;
+        if (!gameManager.IsWin)
+        {
+            transform.position = objectPosition;
+        }
     }
 }
