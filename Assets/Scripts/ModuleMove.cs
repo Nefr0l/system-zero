@@ -1,4 +1,3 @@
-using Classes;
 using UnityEngine;
 
 public class ModuleMove : MonoBehaviour
@@ -16,15 +15,8 @@ public class ModuleMove : MonoBehaviour
         offset = gameManager.borderOffset;
     }
 
-    private void OnMouseDown()
-    {
-        isBeingDragged = true;
-    }
-
-    private void OnMouseUp()
-    {
-        isBeingDragged = false;
-    }
+    private void OnMouseDown() => isBeingDragged = true;
+    private void OnMouseUp() => isBeingDragged = false;
 
     private void OnMouseDrag()
     {
@@ -42,9 +34,6 @@ public class ModuleMove : MonoBehaviour
         if (cursorY < gameManager.downBorder + offset) objectPosition.y = gameManager.downBorder + offset;
         if (cursorY > gameManager.topBorder - offset) objectPosition.y = gameManager.topBorder - offset;
 
-        if (!gameManager.IsWin)
-        {
-            transform.position = objectPosition;
-        }
+        if (!gameManager.IsWin) transform.position = objectPosition;
     }
 }

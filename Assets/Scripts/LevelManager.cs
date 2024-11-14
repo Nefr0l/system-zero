@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     private List<ModuleConnection> ModuleConnections;
     private GameManager manager;
     private GameObject buttonGameObject;
-    private Button winButton;
+    private Button winButton; // Todo: add button mechanic
 
     private void Start()
     {
@@ -21,10 +21,7 @@ public class LevelManager : MonoBehaviour
         buttonGameObject.SetActive(false);
     }   
 
-    public bool CheckWin()
-    {
-        return ModuleConnections.All(m => m.IsChecked()) && !manager.IsWin;
-    }
+    public bool CheckWin() => ModuleConnections.All(m => m.IsChecked()) && !manager.IsWin;
     
     public void Win()
     {

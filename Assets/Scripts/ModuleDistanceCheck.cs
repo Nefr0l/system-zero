@@ -1,4 +1,3 @@
-using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -17,8 +16,8 @@ namespace Classes
         {
             gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
             moduleMove = GetComponent<ModuleMove>();
-            
             line = gameObject.AddComponent<LineRenderer>();
+            
             line.startWidth = 0.08f;
             line.endWidth = line.startWidth;
             line.material = gameManager.lineMaterial;
@@ -27,8 +26,8 @@ namespace Classes
         public bool IsConnected()
         {
             actualDistance = Vector2.Distance(Connection.ConnectionFrom.transform.position, Connection.ConnectionTo.transform.position);
-            return ((Connection.NeedsToBeSmaller && actualDistance > Connection.RequiredDistance) ||
-                   (!Connection.NeedsToBeSmaller && actualDistance < Connection.RequiredDistance));
+            return (Connection.NeedsToBeSmaller && actualDistance > Connection.RequiredDistance) ||
+                   (!Connection.NeedsToBeSmaller && actualDistance < Connection.RequiredDistance);
         }
 
         public void Update()
