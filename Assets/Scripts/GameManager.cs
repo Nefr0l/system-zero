@@ -2,28 +2,42 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Level management
-    public List<GameObject> Levels; // to be continued
+    public List<GameObject> Levels;
+    private int CurrentLevel;
     public bool IsWin;
     
-    // Drag and drop boundaries values
     public float topBorder;
     public float downBorder;
     public float leftBorder;
     public float rightBorder;
     public float borderOffset;
-
-    // Values for connections between lines
+    
     public Color lineColorConnected;
     public Color lineColorDisconnected;
     public Material lineMaterial;
     
-    // Other values
     public Sprite progressbarCompleted;
     public Sprite progressbarUncompleted;
+
+    private GameObject NextLevelButton;
+
+    private void Start()
+    {
+        CurrentLevel = (PlayerPrefs.HasKey("Level")) ? PlayerPrefs.GetInt("Level") : 1;
+
+        foreach (var l in Levels)
+        {
+            l.SetActive(false);
+        }
+        Levels[CurrentLevel - 1].SetActive(true);
+        
+        NextLevelButton = GameObject.FindGameObjectWithTag("Finish");
+        NextLevelButton.SetActive(false);
+    }
 
     public void CheckWin()
     {
@@ -33,24 +47,36 @@ public class GameManager : MonoBehaviour
             .Select(t => t.gameObject)
             .ToArray();
 
-        bool isWin = true;
         foreach (var c in checkboxes)
         {
             if (c.GetComponent<SpriteRenderer>().sprite != progressbarCompleted)
             {
-                isWin = false;
+                break;
             }
         }
+        
+        Win();
+    }
 
-        if (isWin)
+    public void NextLevelButtonClick()
+    {
+        if (CurrentLevel+1 == Levels.Count)
         {
-            IsWin = true;
-            Win();
+            SceneManager.LoadScene("Menu");
         }
+        
+        PlayerPrefs.SetInt("Level", CurrentLevel + 1);
+        PlayerPrefs.Save();
+        
+        SceneManager.LoadScene("Game");
+        
+        // Add handling for out of array of levels exception
     }
 
     private void Win()
     {
         Debug.Log("Win");
+        IsWin = true;
+        NextLevelButton.SetActive(true);
     }
 }
