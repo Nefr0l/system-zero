@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6146378223763627885}
   - component: {fileID: 2195391871552040597}
-  - component: {fileID: 3588061681658294709}
   m_Layer: 0
   m_Name: Progressbar
-  m_TagString: Untagged
+  m_TagString: Checkbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,15 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3588061681658294709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5522823633011687669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c3bfb875a1ace760a6a4be7cd4838bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

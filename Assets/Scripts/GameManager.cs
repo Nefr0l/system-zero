@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -23,8 +25,32 @@ public class GameManager : MonoBehaviour
     public Sprite progressbarCompleted;
     public Sprite progressbarUncompleted;
 
-    private void Start()
+    public void CheckWin()
     {
-        IsWin = false;
+        GameObject[] checkboxes = gameObject.transform
+            .Cast<Transform>()
+            .Where(t => t.gameObject.CompareTag("Checkbox"))
+            .Select(t => t.gameObject)
+            .ToArray();
+
+        bool isWin = true;
+        foreach (var c in checkboxes)
+        {
+            if (c.GetComponent<SpriteRenderer>().sprite != progressbarCompleted)
+            {
+                isWin = false;
+            }
+        }
+
+        if (isWin)
+        {
+            IsWin = true;
+            Win();
+        }
+    }
+
+    private void Win()
+    {
+        Debug.Log("Win");
     }
 }
