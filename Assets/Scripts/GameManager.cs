@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -18,15 +17,17 @@ public class GameManager : MonoBehaviour
     
     public Color lineColorConnected;
     public Color lineColorDisconnected;
-    public Material lineMaterial;
     
     public Sprite progressbarCompleted;
     public Sprite progressbarUncompleted;
-
     private GameObject NextLevelButton;
+
+    private static AudioSource Source;
+    public AudioClip ModuleConnectedSound;
 
     private void Start()
     {
+        Source = GetComponent<AudioSource>();
         CurrentLevel = (PlayerPrefs.HasKey("Level")) ? PlayerPrefs.GetInt("Level") : 1;
 
         foreach (var l in Levels)
@@ -41,21 +42,24 @@ public class GameManager : MonoBehaviour
 
     public void CheckWin()
     {
-        GameObject[] checkboxes = gameObject.transform
+        GameObject[] checkboxes = Levels[CurrentLevel-1].transform
             .Cast<Transform>()
             .Where(t => t.gameObject.CompareTag("Checkbox"))
             .Select(t => t.gameObject)
             .ToArray();
 
+        bool isWin = true;
         foreach (var c in checkboxes)
         {
-            if (c.GetComponent<SpriteRenderer>().sprite != progressbarCompleted)
-            {
-                break;
-            }
+            if (c.GetComponent<SpriteRenderer>().sprite == progressbarUncompleted) isWin = false;
         }
         
-        Win();
+        if (isWin) Win();
+    }
+
+    public static void PlaySound(AudioClip sound)
+    {
+        Source.PlayOneShot(sound);
     }
 
     public void NextLevelButtonClick()
@@ -75,7 +79,6 @@ public class GameManager : MonoBehaviour
 
     private void Win()
     {
-        Debug.Log("Win");
         IsWin = true;
         NextLevelButton.SetActive(true);
     }

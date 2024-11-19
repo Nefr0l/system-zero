@@ -29,6 +29,12 @@ namespace Classes
             return Vector2.Distance(ConnectionFrom.transform.position, ConnectionTo.transform.position);
         }
 
+        public void PlayConnectionSound()
+        {
+            Debug.Log("Sound played");
+            GameManager.PlaySound(GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().ModuleConnectedSound);
+        }
+
         public bool IsConnected()
         {
             float distance = Vector2.Distance(ConnectionFrom.transform.position, 

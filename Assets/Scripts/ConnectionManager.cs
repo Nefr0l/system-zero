@@ -64,6 +64,7 @@ public class ConnectionManager : MonoBehaviour
                 line.startColor = gameManager.lineColorConnected;
                 c.ObjectToCheck.GetComponent<SpriteRenderer>().sprite = gameManager.progressbarCompleted;
                 validConnections++;
+                c.PlayConnectionSound();
             }
             else
             {
