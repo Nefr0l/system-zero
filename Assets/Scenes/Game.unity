@@ -694,7 +694,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 03db454cb4a0f197184f6b31287592bf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 0.85
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -1064,7 +1064,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4456af3836705cfb696e696805ccfcc0, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
