@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
 
     private static AudioSource Source;
     public AudioClip ModuleConnectedSound;
+    public AudioClip WinSound;
+
+    private bool canPlayWinSound = true;
 
     private void Start()
     {
@@ -55,7 +58,7 @@ public class GameManager : MonoBehaviour
         }
         
         if (isWin) Win();
-    }
+    } 
 
     public static void PlaySound(AudioClip sound)
     {
@@ -77,9 +80,21 @@ public class GameManager : MonoBehaviour
         // Add handling for out of array of levels exception
     }
 
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     private void Win()
     {
         IsWin = true;
         NextLevelButton.SetActive(true);
+        if (canPlayWinSound)
+        {
+            PlaySound(WinSound);
+        }
+
+        canPlayWinSound = false;
+
     }
 }
