@@ -38,6 +38,7 @@ public class ConnectionManager : MonoBehaviour
         {
             LineRenderer line = c.LineObject.GetComponent<LineRenderer>();
             line.enabled = true;
+            c.IsEncounter = true;
         }
     }
     
@@ -47,6 +48,7 @@ public class ConnectionManager : MonoBehaviour
         {
             LineRenderer line = c.LineObject.GetComponent<LineRenderer>();
             line.enabled = false;
+            c.IsEncounter = false;
         }
     }
     
@@ -57,14 +59,19 @@ public class ConnectionManager : MonoBehaviour
         foreach (var c in Connections)
         {
             LineRenderer line = c.LineObject.GetComponent<LineRenderer>();
-            line.SetPositions(new []{c.ConnectionFrom.transform.position, c.ConnectionTo.transform.position});
+            line.SetPositions(new [] {c.ConnectionFrom.transform.position, c.ConnectionTo.transform.position} );
 
+            if (c.IsEncounter && line.startColor == gameManager.lineColorConnected)
+            {
+                c.PlayConnectionSound();
+                c.IsEncounter = false;
+            }
+            
             if (c.IsConnected())
             {
-                line.startColor = gameManager.lineColorConnected;
                 c.ObjectToCheck.GetComponent<SpriteRenderer>().sprite = gameManager.progressbarCompleted;
                 validConnections++;
-                c.PlayConnectionSound();
+                line.startColor = gameManager.lineColorConnected;
             }
             else
             {

@@ -14,6 +14,7 @@ namespace Classes
         
         public GameObject LineObject;
         private LineRenderer Line;
+        public bool IsEncounter;
     
         public Connection(GameObject connectionFrom, GameObject connectionTo, GameObject objectToCheck, float requiredDistance, bool mustBeSmaller)
         {
@@ -32,7 +33,12 @@ namespace Classes
         public void PlayConnectionSound()
         {
             Debug.Log("Sound played");
-            GameManager.PlaySound(GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().ModuleConnectedSound);
+            AudioSource source = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
+
+            if (source.isPlaying == false) 
+            {
+                GameManager.PlaySound(GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().ModuleConnectedSound);
+            }
         }
 
         public bool IsConnected()
@@ -42,16 +48,6 @@ namespace Classes
             
             return (MustBeSmaller && distance < RequiredDistance) ||
                    (MustBeSmaller == false && distance > RequiredDistance);
-        }
-
-        public void ShowLine()
-        {
-            Line.enabled = true;
-        }
-
-        public void HideLine()
-        {
-            Line.enabled = false;
         }
 
         public void UpdateLine(Vector2 from, Vector2 to)
