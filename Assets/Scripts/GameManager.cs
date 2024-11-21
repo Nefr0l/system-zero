@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public List<GameObject> Levels;
     private int CurrentLevel;
-    public bool IsWin;
+    public static bool IsWin = false;
     
     public float topBorder;
     public float downBorder;
@@ -30,8 +30,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        IsWin = false;
         Source = GetComponent<AudioSource>();
-        CurrentLevel = (PlayerPrefs.HasKey("Level") ? PlayerPrefs.GetInt("Level") : 1);
+        CurrentLevel = (PlayerPrefs.HasKey("level") ? PlayerPrefs.GetInt("level") : 1);
 
         foreach (var l in Levels)
         {
@@ -67,17 +68,15 @@ public class GameManager : MonoBehaviour
 
     public void NextLevelButtonClick()
     {
-        if (CurrentLevel + 1 == Levels.Count)
+        if (CurrentLevel - 1 == Levels.Count)
         {
             SceneManager.LoadScene("Menu");
         }
         
-        PlayerPrefs.SetInt("Level", CurrentLevel + 1);
+        PlayerPrefs.SetInt("level", CurrentLevel + 1);
         PlayerPrefs.Save();
         
         SceneManager.LoadScene("Game");
-        
-        // Add handling for out of array of levels exception
     }
 
     public void ChangeScene(string sceneName)

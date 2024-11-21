@@ -20,6 +20,12 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void LoadLevel(int levelNumber)
+    {
+        PlayerPrefs.SetInt("level", levelNumber);
+        SceneManager.LoadScene("Game");
+    }
+
     public void ShowPanel(GameObject panel)
     {
         HidePanels();

@@ -6,7 +6,6 @@ using UnityEngine;
 public class ConnectionManager : MonoBehaviour
 {
     public List<Connection> Connections;
-
     private GameManager gameManager;
     
     void Start()
@@ -17,7 +16,6 @@ public class ConnectionManager : MonoBehaviour
         {
             c.LineObject = new GameObject("Line_" + 1);
             c.LineObject.transform.SetParent(transform); 
-    
             c.LineObject.AddComponent<LineRenderer>();
 
             LineRenderer line = c.LineObject.GetComponent<LineRenderer>();
@@ -78,15 +76,11 @@ public class ConnectionManager : MonoBehaviour
                 bool check = true;
                 foreach (var con in cons)
                 {
-                    if (con.IsConnected() == false)
-                    {
-                        check = false;
-                    }
+                    if (con.IsConnected() == false) check = false;
                 }
 
                 c.ObjectToCheck.GetComponent<SpriteRenderer>().sprite = check ? 
                     gameManager.progressbarCompleted : gameManager.progressbarUncompleted;
-                
             }
             else
             {
