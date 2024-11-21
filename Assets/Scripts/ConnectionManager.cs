@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Classes;
 using UnityEngine;
 
@@ -69,9 +70,23 @@ public class ConnectionManager : MonoBehaviour
             
             if (c.IsConnected())
             {
-                c.ObjectToCheck.GetComponent<SpriteRenderer>().sprite = gameManager.progressbarCompleted;
                 validConnections++;
                 line.startColor = gameManager.lineColorConnected;
+
+                var cons = Connections.Where(e => e.ObjectToCheck == c.ObjectToCheck);
+
+                bool check = true;
+                foreach (var con in cons)
+                {
+                    if (con.IsConnected() == false)
+                    {
+                        check = false;
+                    }
+                }
+
+                c.ObjectToCheck.GetComponent<SpriteRenderer>().sprite = check ? 
+                    gameManager.progressbarCompleted : gameManager.progressbarUncompleted;
+                
             }
             else
             {

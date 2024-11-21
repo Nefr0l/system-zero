@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Source = GetComponent<AudioSource>();
-        CurrentLevel = (PlayerPrefs.HasKey("Level")) ? PlayerPrefs.GetInt("Level") : 1;
+        CurrentLevel = (PlayerPrefs.HasKey("Level") ? PlayerPrefs.GetInt("Level") : 1);
 
         foreach (var l in Levels)
         {
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLevelButtonClick()
     {
-        if (CurrentLevel+1 == Levels.Count)
+        if (CurrentLevel + 1 == Levels.Count)
         {
             SceneManager.LoadScene("Menu");
         }

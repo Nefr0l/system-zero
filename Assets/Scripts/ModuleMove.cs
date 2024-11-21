@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ModuleMove : MonoBehaviour
 {
+    public GameObject Checkbox;
+    
     private float offset;
     private GameManager gameManager;
     private ConnectionManager connectionManager;
@@ -9,7 +11,7 @@ public class ModuleMove : MonoBehaviour
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        connectionManager = GetComponent<ConnectionManager>();
+        connectionManager = Checkbox.GetComponent<ConnectionManager>();
         offset = gameManager.borderOffset;
     }
 
