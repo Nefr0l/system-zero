@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public List<GameObject> panels;
+    public GameObject particlePrefab;
 
     private void Start()
     {
