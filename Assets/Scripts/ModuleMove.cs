@@ -33,21 +33,19 @@ public class ModuleMove : MonoBehaviour
 
         if (CanMove)
         {
-            // Object drag code remains the same
-                    Vector2 cursorPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-                    Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint);
+            Vector2 cursorPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint);
                 
-                    float cursorX = cursorPosition.x;
-                    float cursorY = cursorPosition.y;
-                    Vector2 objectPosition = cursorPosition;
+            float cursorX = cursorPosition.x;
+            float cursorY = cursorPosition.y;
+            Vector2 objectPosition = cursorPosition;
+
+            if (cursorX < gameManager.leftBorder + offset) objectPosition.x = gameManager.leftBorder + offset;
+            if (cursorX > gameManager.rightBorder - offset) objectPosition.x = gameManager.rightBorder - offset;
+            if (cursorY < gameManager.downBorder + offset) objectPosition.y = gameManager.downBorder + offset;
+            if (cursorY > gameManager.topBorder - offset) objectPosition.y = gameManager.topBorder - offset;
             
-                    // Boundaries for object dragging
-                    if (cursorX < gameManager.leftBorder + offset) objectPosition.x = gameManager.leftBorder + offset;
-                    if (cursorX > gameManager.rightBorder - offset) objectPosition.x = gameManager.rightBorder - offset;
-                    if (cursorY < gameManager.downBorder + offset) objectPosition.y = gameManager.downBorder + offset;
-                    if (cursorY > gameManager.topBorder - offset) objectPosition.y = gameManager.topBorder - offset;
-            
-                    if (!GameManager.IsWin) transform.position = objectPosition;
+            if (!GameManager.IsWin) transform.position = objectPosition;
         }
         
     }

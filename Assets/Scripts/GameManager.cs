@@ -69,9 +69,7 @@ public class GameManager : MonoBehaviour
     public void NextLevelButtonClick()
     {
         if (CurrentLevel - 1 == Levels.Count)
-        {
             SceneManager.LoadScene("Menu");
-        }
         
         PlayerPrefs.SetInt("level", CurrentLevel + 1);
         PlayerPrefs.Save();
@@ -86,14 +84,11 @@ public class GameManager : MonoBehaviour
 
     private void Win()
     {
+        if (canPlayWinSound)
+            PlaySound(WinSound);
+        
         IsWin = true;
         NextLevelButton.SetActive(true);
-        if (canPlayWinSound)
-        {
-            PlaySound(WinSound);
-        }
-
         canPlayWinSound = false;
-
     }
 }

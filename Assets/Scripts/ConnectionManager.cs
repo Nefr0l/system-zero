@@ -20,14 +20,15 @@ public class ConnectionManager : MonoBehaviour
 
             LineRenderer line = c.LineObject.GetComponent<LineRenderer>();
 
-            line.material = new Material(Shader.Find("Sprites/Default"));
-            line.startColor = gameManager.lineColorDisconnected;
-            line.endColor = line.endColor;
-            line.startWidth = 0.1f;
-            line.endWidth = line.startWidth;
             line.SetPosition(0, transform.position);
             line.SetPosition(1, c.ConnectionTo.transform.position);
+            line.startColor = gameManager.lineColorDisconnected;
+            line.endColor = line.endColor;
+            line.material = new Material(Shader.Find("Sprites/Default"));
+            line.startWidth = 0.1f;
+            line.endWidth = line.startWidth;
         }
+        
         HideLines();
     }
 
@@ -75,10 +76,8 @@ public class ConnectionManager : MonoBehaviour
 
                 bool check = true;
                 foreach (var con in cons)
-                {
                     if (con.IsConnected() == false) check = false;
-                }
-
+                
                 c.ObjectToCheck.GetComponent<SpriteRenderer>().sprite = check ? 
                     gameManager.progressbarCompleted : gameManager.progressbarUncompleted;
             }
@@ -92,8 +91,6 @@ public class ConnectionManager : MonoBehaviour
         }
 
         if (validConnections == Connections.Count)
-        {
             gameManager.CheckWin();
-        }
     }
 }

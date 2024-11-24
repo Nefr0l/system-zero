@@ -36,9 +36,9 @@ namespace Classes
             AudioSource source = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
 
             if (source.isPlaying == false && !GameManager.IsWin) 
-            {
-                GameManager.PlaySound(GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().ModuleConnectedSound);
-            }
+                GameManager.PlaySound
+                    (GameObject.FindGameObjectWithTag("GameController").
+                    GetComponent<GameManager>().ModuleConnectedSound);
         }
 
         public bool IsConnected()
