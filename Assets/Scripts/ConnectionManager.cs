@@ -92,7 +92,6 @@ public class ConnectionManager : MonoBehaviour
             line.endColor = line.startColor;
         }
 
-        if (validConnections == Connections.Count)
-            gameManager.CheckWin();
+        if (validConnections == Connections.Count) gameManager.CheckWin();
     }
 }

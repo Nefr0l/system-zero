@@ -35,9 +35,8 @@ public class GameManager : MonoBehaviour
         CurrentLevel = (PlayerPrefs.HasKey("level") ? PlayerPrefs.GetInt("level") : 1);
 
         foreach (var l in Levels)
-        {
             l.SetActive(false);
-        }
+        
         Levels[CurrentLevel - 1].SetActive(true);
         
         NextLevelButton = GameObject.FindGameObjectWithTag("Finish");
@@ -52,13 +51,7 @@ public class GameManager : MonoBehaviour
             .Select(t => t.gameObject)
             .ToArray();
 
-        bool isWin = true;
-        foreach (var c in checkboxes)
-        {
-            if (c.GetComponent<SpriteRenderer>().sprite == progressbarUncompleted) isWin = false;
-        }
-        
-        if (isWin) Win();
+        if (checkboxes[0].GetComponent<SpriteRenderer>().sprite == progressbarCompleted) Win();
     } 
 
     public static void PlaySound(AudioClip sound)
@@ -84,8 +77,7 @@ public class GameManager : MonoBehaviour
 
     private void Win()
     {
-        if (canPlayWinSound)
-            PlaySound(WinSound);
+        if (canPlayWinSound) PlaySound(WinSound);
         
         IsWin = true;
         NextLevelButton.SetActive(true);
