@@ -2583,13 +2583,6 @@ MonoBehaviour:
     LineObject: {fileID: 0}
     IsEncounter: 0
   - ConnectionFrom: {fileID: 1910722970}
-    ConnectionTo: {fileID: 2116288383}
-    ObjectToCheck: {fileID: 928274193}
-    RequiredDistance: 4
-    MustBeSmaller: 0
-    LineObject: {fileID: 0}
-    IsEncounter: 0
-  - ConnectionFrom: {fileID: 1910722970}
     ConnectionTo: {fileID: 13383139}
     ObjectToCheck: {fileID: 928274193}
     RequiredDistance: 4.75

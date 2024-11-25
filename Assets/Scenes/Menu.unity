@@ -629,7 +629,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1166324605}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: ChangeMusicVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &228034034
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,8 +884,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 62.5, y: -15}
-  m_SizeDelta: {x: 115, y: 30}
+  m_AnchoredPosition: {x: 58.497276, y: -15}
+  m_SizeDelta: {x: 106.9905, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &533279662
 GameObject:
@@ -1591,8 +1603,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 62.5, y: -15}
-  m_SizeDelta: {x: 115, y: 30}
+  m_AnchoredPosition: {x: 57.745, y: -15}
+  m_SizeDelta: {x: 105.49, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1166324601
 GameObject:
@@ -1705,7 +1717,10 @@ MonoBehaviour:
   - {fileID: 162739944}
   - {fileID: 1402782616}
   - {fileID: 2078111368}
-  particlePrefab: {fileID: 0}
+  fxSlider: {fileID: 1837071479}
+  musicSlider: {fileID: 171610073}
+  fxMixer: {fileID: 24100000, guid: 7643f5ecd9171001e82a831bc3339429, type: 2}
+  musicMixer: {fileID: 24100000, guid: 35f3c18d2965978c7a8e867c1e9dccd1, type: 2}
 --- !u!82 &1166324606
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2063,8 +2078,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 62.6895, y: -14.7142}
-  m_SizeDelta: {x: 105.3788, y: 4.4284}
+  m_AnchoredPosition: {x: 60.056717, y: -14.714199}
+  m_SizeDelta: {x: 100.1132, y: 4.4284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1395020400
 GameObject:
@@ -3034,7 +3049,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1166324605}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: ChangeFxVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1902384781
 GameObject:
   m_ObjectHideFlags: 0
@@ -3544,8 +3571,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 62.6895, y: -14.7142}
-  m_SizeDelta: {x: 105.3788, y: 4.4284}
+  m_AnchoredPosition: {x: 60.244766, y: -14.714199}
+  m_SizeDelta: {x: 100.4893, y: 4.4284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2078111368
 GameObject:
