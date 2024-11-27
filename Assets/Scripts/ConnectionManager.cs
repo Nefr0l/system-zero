@@ -15,18 +15,16 @@ public class ConnectionManager : MonoBehaviour
         foreach (var c in Connections)
         {
             c.LineObject = new GameObject("Line_" + 1);
-            c.LineObject.transform.SetParent(transform); 
-            c.LineObject.AddComponent<LineRenderer>();
-
-            LineRenderer line = c.LineObject.GetComponent<LineRenderer>();
-            line.SetPosition(0, transform.position);
-            line.SetPosition(1, c.ConnectionTo.transform.position);
-            line.startColor = gameManager.lineColorDisconnected;
-            line.endColor = line.endColor;
-            line.material = new Material(Shader.Find("Sprites/Default"));
-            line.startWidth = 0.1f;
-            line.endWidth = line.startWidth;
-            line.enabled = false;
+            c.LineObject.SetActive(false);
+            
+            LineRenderer l = c.LineObject.AddComponent<LineRenderer>();
+            
+            l.SetPositions(new []{ c.ConnectionFrom.transform.position , c.ConnectionTo.transform.position});
+            l.startColor = gameManager.lineColorDisconnected;
+            l.endColor = l.startColor;
+            l.material = new Material(Shader.Find("Sprites/Default"));
+            l.startWidth = 0.1f;
+            l.endWidth = l.startWidth;
         }
     }
 
@@ -34,9 +32,8 @@ public class ConnectionManager : MonoBehaviour
     {
         foreach (var c in Connections)
         {
-            LineRenderer line = c.LineObject.GetComponent<LineRenderer>();
-            line.enabled = true;
-            c.IsEncounter = true;
+            c.LineObject.SetActive(true);
+            c.StateChanged = true;
         }
     }
     
@@ -44,50 +41,29 @@ public class ConnectionManager : MonoBehaviour
     {
         foreach (var c in Connections)
         {
-            LineRenderer line = c.LineObject.GetComponent<LineRenderer>();
-            line.enabled = false;
-            c.IsEncounter = false;
+            c.LineObject.SetActive(false);
+            c.StateChanged = false;
         }
     }
     
-    public void UpdateLines()
+    // Function called every frame module is being dragged
+    public void UpdateLines(GameObject moduleToCheck) 
     {
-        int validConnections = 0;
-        
-        foreach (var c in Connections)
+        foreach (var c in Connections.Where(e => e.ConnectionTo == moduleToCheck || e.ConnectionFrom == moduleToCheck))
         {
             LineRenderer line = c.LineObject.GetComponent<LineRenderer>();
             line.SetPositions(new [] {c.ConnectionFrom.transform.position, c.ConnectionTo.transform.position} );
-
-            if (c.IsEncounter && line.startColor == gameManager.lineColorConnected)
+            
+            if (c.IsConnected() && c.StateChanged)
             {
                 c.PlayConnectionSound();
-                c.IsEncounter = false;
+                c.StateChanged = false;
             }
             
-            if (c.IsConnected())
-            {
-                validConnections++;
-                line.startColor = gameManager.lineColorConnected;
-
-                var cons = Connections.Where(e => e.ObjectToCheck == c.ObjectToCheck);
-
-                bool check = true;
-                foreach (var con in cons)
-                    if (con.IsConnected() == false) check = false;
-                
-                c.ObjectToCheck.GetComponent<SpriteRenderer>().sprite = check ? 
-                    gameManager.progressbarCompleted : gameManager.progressbarUncompleted;
-            }
-            else
-            {
-                line.startColor = gameManager.lineColorDisconnected;
-                c.ObjectToCheck.GetComponent<SpriteRenderer>().sprite = gameManager.progressbarUncompleted;
-            }
-
+            line.startColor = (c.IsConnected()) ? gameManager.lineColorConnected : gameManager.lineColorDisconnected;
             line.endColor = line.startColor;
         }
 
-        if (validConnections == Connections.Count) gameManager.CheckWin();
+        if (gameManager.WinCheck()) gameManager.Win();
     }
 }

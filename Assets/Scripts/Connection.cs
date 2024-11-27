@@ -14,7 +14,7 @@ namespace Classes
         
         public GameObject LineObject;
         private LineRenderer Line;
-        public bool IsEncounter;
+        public bool StateChanged;
     
         public Connection(GameObject connectionFrom, GameObject connectionTo, GameObject objectToCheck, float requiredDistance, bool mustBeSmaller)
         {

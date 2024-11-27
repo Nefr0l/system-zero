@@ -41,16 +41,21 @@ public class GameManager : MonoBehaviour
         NextLevelButton.SetActive(false);
     }
 
-    public void CheckWin()
+    public bool WinCheck()
     {
         GameObject[] checkboxes = Levels[CurrentLevel-1].transform
             .Cast<Transform>()
             .Where(t => t.gameObject.CompareTag("Checkbox"))
             .Select(t => t.gameObject)
             .ToArray();
+        
+        foreach (var c in checkboxes[0].GetComponent<ConnectionManager>().Connections)
+        {
+            if (c.IsConnected() == false) return false;
+        }
 
-        if (checkboxes[0].GetComponent<SpriteRenderer>().sprite == progressbarCompleted) Win();
-    } 
+        return true;
+    }
 
     public static void PlaySound(AudioClip sound)
     {
@@ -74,7 +79,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    private void Win()
+    public void Win()
     {
         if (canPlayWinSound) PlaySound(WinSound);
         
