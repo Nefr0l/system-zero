@@ -600,12 +600,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1677670589}
-  - {fileID: 1722739501}
   - {fileID: 439221194}
-  - {fileID: 2075866363}
   - {fileID: 866207212}
   - {fileID: 1757244644}
+  - {fileID: 2081144216}
+  - {fileID: 610600179}
   - {fileID: 2045972463}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -939,11 +938,10 @@ MonoBehaviour:
   Connections:
   - ConnectionFrom: {fileID: 465895994}
     ConnectionTo: {fileID: 592118511}
-    ObjectToCheck: {fileID: 417319124}
     RequiredDistance: 2
     MustBeSmaller: 1
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
 --- !u!1001 &439221192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1002,11 +1000,11 @@ PrefabInstance:
       objectReference: {fileID: 2045972464}
     - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.8200002
+      value: -2.1799998
       objectReference: {fileID: 0}
     - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.049999952
+      value: -2.5499997
       objectReference: {fileID: 0}
     - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1261,18 +1259,16 @@ MonoBehaviour:
   Connections:
   - ConnectionFrom: {fileID: 707961208}
     ConnectionTo: {fileID: 1491499003}
-    ObjectToCheck: {fileID: 499276466}
     RequiredDistance: 2
     MustBeSmaller: 1
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 187965723}
     ConnectionTo: {fileID: 1491499003}
-    ObjectToCheck: {fileID: 499276466}
     RequiredDistance: 2
     MustBeSmaller: 1
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
 --- !u!1 &515976761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,6 +1832,133 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
   m_PrefabInstance: {fileID: 592118510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &610600178
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 209012900}
+    m_Modifications:
+    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: Connections.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: Connections.Array.data[0].ConnectionTo
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: Connections.Array.data[1].ConnectionTo
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: Connections.Array.data[0].MustBeSmaller
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: Connections.Array.data[0].ObjectToCheck
+      value: 
+      objectReference: {fileID: 2045972464}
+    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: Connections.Array.data[1].MustBeSmaller
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: Connections.Array.data[1].ObjectToCheck
+      value: 
+      objectReference: {fileID: 2045972464}
+    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: Connections.Array.data[0].ConnectionFrom
+      value: 
+      objectReference: {fileID: 610600180}
+    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: Connections.Array.data[1].ConnectionFrom
+      value: 
+      objectReference: {fileID: 610600180}
+    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: Connections.Array.data[0].RequiredDistance
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: Connections.Array.data[1].RequiredDistance
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: CanMoveX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: CanMoveY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: Checkbox
+      value: 
+      objectReference: {fileID: 2045972464}
+    - target: {fileID: 1396095930991932230, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 42383d986352fc9fa9b47d5f5d79e4d3, type: 3}
+    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.21000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.18000054
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.07633409
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008590954706133812, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_Name
+      value: Module (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+--- !u!4 &610600179 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+  m_PrefabInstance: {fileID: 610600178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &610600180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7008590954706133812, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+  m_PrefabInstance: {fileID: 610600178}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &645124309
 GameObject:
@@ -2782,46 +2905,40 @@ MonoBehaviour:
   Connections:
   - ConnectionFrom: {fileID: 1466546954}
     ConnectionTo: {fileID: 209568879}
-    ObjectToCheck: {fileID: 681474540}
     RequiredDistance: 5
     MustBeSmaller: 0
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 1243776549}
     ConnectionTo: {fileID: 209568879}
-    ObjectToCheck: {fileID: 681474540}
     RequiredDistance: 5
     MustBeSmaller: 0
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 177123535}
     ConnectionTo: {fileID: 209568879}
-    ObjectToCheck: {fileID: 681474540}
     RequiredDistance: 6
     MustBeSmaller: 0
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 177123535}
     ConnectionTo: {fileID: 209568879}
-    ObjectToCheck: {fileID: 681474540}
     RequiredDistance: 3
     MustBeSmaller: 0
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 874283086}
     ConnectionTo: {fileID: 209568879}
-    ObjectToCheck: {fileID: 681474540}
     RequiredDistance: 3
     MustBeSmaller: 0
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 874283086}
     ConnectionTo: {fileID: 177123535}
-    ObjectToCheck: {fileID: 681474540}
     RequiredDistance: 2
     MustBeSmaller: 1
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
 --- !u!1001 &707961206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3024,25 +3141,22 @@ MonoBehaviour:
   Connections:
   - ConnectionFrom: {fileID: 1282668531}
     ConnectionTo: {fileID: 1052990910}
-    ObjectToCheck: {fileID: 795773296}
     RequiredDistance: 9
     MustBeSmaller: 0
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 1442238748}
     ConnectionTo: {fileID: 1052990910}
-    ObjectToCheck: {fileID: 795773296}
     RequiredDistance: 11
     MustBeSmaller: 0
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 1442238748}
     ConnectionTo: {fileID: 1282668531}
-    ObjectToCheck: {fileID: 795773296}
     RequiredDistance: 4
     MustBeSmaller: 0
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
 --- !u!1001 &866207211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3113,11 +3227,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 4b86ab3ab6baf8fdf89fb1de921fca93, type: 3}
     - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.18
+      value: -6.1800003
       objectReference: {fileID: 0}
     - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.049999952
+      value: -0.049999714
       objectReference: {fileID: 0}
     - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3487,46 +3601,40 @@ MonoBehaviour:
   Connections:
   - ConnectionFrom: {fileID: 1910722970}
     ConnectionTo: {fileID: 1600160459}
-    ObjectToCheck: {fileID: 928274193}
     RequiredDistance: 3
     MustBeSmaller: 0
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 1910722970}
     ConnectionTo: {fileID: 917444280}
-    ObjectToCheck: {fileID: 928274193}
     RequiredDistance: 3
     MustBeSmaller: 1
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 1910722970}
     ConnectionTo: {fileID: 13383139}
-    ObjectToCheck: {fileID: 928274193}
     RequiredDistance: 4.75
     MustBeSmaller: 0
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 1600160459}
     ConnectionTo: {fileID: 2116288383}
-    ObjectToCheck: {fileID: 928274193}
     RequiredDistance: 2.5
     MustBeSmaller: 1
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 1600160459}
     ConnectionTo: {fileID: 13383139}
-    ObjectToCheck: {fileID: 928274193}
     RequiredDistance: 4
     MustBeSmaller: 1
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 917444280}
     ConnectionTo: {fileID: 2116288383}
-    ObjectToCheck: {fileID: 928274193}
     RequiredDistance: 2
     MustBeSmaller: 1
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
 --- !u!1 &976724683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3831,8 +3939,6 @@ MonoBehaviour:
   borderOffset: 0.5
   lineColorConnected: {r: 0.19607843, g: 0.7921569, b: 0.5058824, a: 1}
   lineColorDisconnected: {r: 0.2, g: 0.25882354, b: 0.43137255, a: 1}
-  progressbarCompleted: {fileID: 21300000, guid: 3ac2a3cfe0ab90864b0d0729d4e85da1, type: 3}
-  progressbarUncompleted: {fileID: 21300000, guid: 086e7a730b3fb521fb07eb603c13fa0b, type: 3}
   ModuleConnectedSound: {fileID: 8300000, guid: dea75ea6a1ac92c69b5e3e7f405613cd, type: 3}
   WinSound: {fileID: 8300000, guid: 5d004aa94213007bd9aec78598f58581, type: 3}
 --- !u!82 &1089939559
@@ -5310,284 +5416,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
   m_PrefabInstance: {fileID: 1600160458}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1677670587
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 209012900}
-    m_Modifications:
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[0].ConnectionTo
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[1].ConnectionTo
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[0].MustBeSmaller
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[0].ObjectToCheck
-      value: 
-      objectReference: {fileID: 2045972464}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[1].MustBeSmaller
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[1].ObjectToCheck
-      value: 
-      objectReference: {fileID: 2045972464}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[0].ConnectionFrom
-      value: 
-      objectReference: {fileID: 1677670588}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[1].ConnectionFrom
-      value: 
-      objectReference: {fileID: 1677670588}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[0].RequiredDistance
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[1].RequiredDistance
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: CanMove
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: CanMoveX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: CanMoveY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Checkbox
-      value: 
-      objectReference: {fileID: 2045972464}
-    - target: {fileID: 1396095930991932230, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1396095930991932230, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1396095930991932230, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c4b80c9b6449fae8fb5ccf94e6d051d0, type: 3}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.1799994
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.5700002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.07633409
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7008590954706133812, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_Name
-      value: static1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
---- !u!1 &1677670588 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7008590954706133812, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-  m_PrefabInstance: {fileID: 1677670587}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1677670589 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-  m_PrefabInstance: {fileID: 1677670587}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1722739500
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 209012900}
-    m_Modifications:
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[0].ConnectionTo
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[1].ConnectionTo
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[0].MustBeSmaller
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[0].ObjectToCheck
-      value: 
-      objectReference: {fileID: 2045972464}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[1].MustBeSmaller
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[1].ObjectToCheck
-      value: 
-      objectReference: {fileID: 2045972464}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[0].ConnectionFrom
-      value: 
-      objectReference: {fileID: 1722739502}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[1].ConnectionFrom
-      value: 
-      objectReference: {fileID: 1722739502}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[0].RequiredDistance
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Connections.Array.data[1].RequiredDistance
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: CanMove
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: CanMoveX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: CanMoveY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: Checkbox
-      value: 
-      objectReference: {fileID: 2045972464}
-    - target: {fileID: 1396095930991932230, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1396095930991932230, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1396095930991932230, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c4b80c9b6449fae8fb5ccf94e6d051d0, type: 3}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.1800003
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.4299998
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.07633409
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7008590954706133812, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-      propertyPath: m_Name
-      value: static1 (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
---- !u!4 &1722739501 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-  m_PrefabInstance: {fileID: 1722739500}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1722739502 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7008590954706133812, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-  m_PrefabInstance: {fileID: 1722739500}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1757244642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5654,11 +5482,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: c4b80c9b6449fae8fb5ccf94e6d051d0, type: 3}
     - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.21
+      value: -0.21000004
       objectReference: {fileID: 0}
     - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.069999814
+      value: -2.5699995
       objectReference: {fileID: 0}
     - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6145,34 +5973,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Connections:
-  - ConnectionFrom: {fileID: 1677670588}
+  - ConnectionFrom: {fileID: 2081144217}
     ConnectionTo: {fileID: 866207213}
-    ObjectToCheck: {fileID: 2045972464}
     RequiredDistance: 3
     MustBeSmaller: 1
     LineObject: {fileID: 0}
-    IsEncounter: 0
-  - ConnectionFrom: {fileID: 866207213}
-    ConnectionTo: {fileID: 1722739502}
-    ObjectToCheck: {fileID: 2045972464}
-    RequiredDistance: 12
-    MustBeSmaller: 0
-    LineObject: {fileID: 0}
-    IsEncounter: 0
-  - ConnectionFrom: {fileID: 1757244643}
-    ConnectionTo: {fileID: 1722739502}
-    ObjectToCheck: {fileID: 2045972464}
-    RequiredDistance: 7
+    StateChanged: 0
+  - ConnectionFrom: {fileID: 2081144217}
+    ConnectionTo: {fileID: 610600180}
+    RequiredDistance: 3
     MustBeSmaller: 1
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 1757244643}
-    ConnectionTo: {fileID: 1677670588}
-    ObjectToCheck: {fileID: 2045972464}
-    RequiredDistance: 8.25
+    ConnectionTo: {fileID: 610600180}
+    RequiredDistance: 4
     MustBeSmaller: 0
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
+  - ConnectionFrom: {fileID: 439221193}
+    ConnectionTo: {fileID: 1757244643}
+    RequiredDistance: 1.5
+    MustBeSmaller: 1
+    LineObject: {fileID: 0}
+    StateChanged: 0
+  - ConnectionFrom: {fileID: 439221193}
+    ConnectionTo: {fileID: 866207213}
+    RequiredDistance: 7
+    MustBeSmaller: 0
+    LineObject: {fileID: 0}
+    StateChanged: 0
 --- !u!1 &2055427106
 GameObject:
   m_ObjectHideFlags: 0
@@ -6306,7 +6136,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055427106}
   m_CullTransparentMesh: 1
---- !u!1001 &2075866362
+--- !u!1001 &2081144215
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -6345,11 +6175,11 @@ PrefabInstance:
     - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: Connections.Array.data[0].ConnectionFrom
       value: 
-      objectReference: {fileID: 2075866364}
+      objectReference: {fileID: 2081144217}
     - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: Connections.Array.data[1].ConnectionFrom
       value: 
-      objectReference: {fileID: 2075866364}
+      objectReference: {fileID: 2081144217}
     - target: {fileID: 1068154351164859494, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: Connections.Array.data[0].RequiredDistance
       value: 2.5
@@ -6359,16 +6189,28 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: CanMoveX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: CanMoveY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284659670175172639, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: Checkbox
       value: 
       objectReference: {fileID: 2045972464}
+    - target: {fileID: 1396095930991932230, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 42383d986352fc9fa9b47d5f5d79e4d3, type: 3}
     - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.18
+      value: -0.21000004
       objectReference: {fileID: 0}
     - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.45
+      value: 2.4300005
       objectReference: {fileID: 0}
     - target: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6411,15 +6253,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
---- !u!4 &2075866363 stripped
+--- !u!4 &2081144216 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4373941571645848953, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-  m_PrefabInstance: {fileID: 2075866362}
+  m_PrefabInstance: {fileID: 2081144215}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2075866364 stripped
+--- !u!1 &2081144217 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7008590954706133812, guid: accd44f0d4e285c2587272d82bf87596, type: 3}
-  m_PrefabInstance: {fileID: 2075866362}
+  m_PrefabInstance: {fileID: 2081144215}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2084781767
 PrefabInstance:
@@ -6519,25 +6361,22 @@ MonoBehaviour:
   Connections:
   - ConnectionFrom: {fileID: 554696924}
     ConnectionTo: {fileID: 1189579116}
-    ObjectToCheck: {fileID: 2084781769}
     RequiredDistance: 4
     MustBeSmaller: 0
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 1576336251}
     ConnectionTo: {fileID: 1189579116}
-    ObjectToCheck: {fileID: 2084781769}
     RequiredDistance: 2
     MustBeSmaller: 1
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
   - ConnectionFrom: {fileID: 554696924}
     ConnectionTo: {fileID: 122158337}
-    ObjectToCheck: {fileID: 2084781769}
     RequiredDistance: 2
     MustBeSmaller: 1
     LineObject: {fileID: 0}
-    IsEncounter: 0
+    StateChanged: 0
 --- !u!1001 &2116288382
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -29,6 +29,7 @@ public class ModuleMove : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        if (GameManager.IsWin) return;
         connectionManager.UpdateLines(gameObject);
         
         Vector2 cursorPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -46,7 +47,7 @@ public class ModuleMove : MonoBehaviour
         Vector2 newPos = new Vector2(CanMoveX ? objectPosition.x : transform.position.x,
             CanMoveY ? objectPosition.y : transform.position.y);
         
-        if (!GameManager.IsWin) transform.position = newPos;
+        transform.position = newPos;
     }
 
 }

@@ -39,6 +39,8 @@ public class ConnectionManager : MonoBehaviour
     
     public void HideLines()
     {
+        if (GameManager.IsWin) return;
+        
         foreach (var c in Connections)
         {
             c.LineObject.SetActive(false);
@@ -46,7 +48,6 @@ public class ConnectionManager : MonoBehaviour
         }
     }
     
-    // Function called every frame module is being dragged
     public void UpdateLines(GameObject moduleToCheck) 
     {
         foreach (var c in Connections.Where(e => e.ConnectionTo == moduleToCheck || e.ConnectionFrom == moduleToCheck))
@@ -60,7 +61,7 @@ public class ConnectionManager : MonoBehaviour
                 c.StateChanged = false;
             }
             
-            line.startColor = (c.IsConnected()) ? gameManager.lineColorConnected : gameManager.lineColorDisconnected;
+            line.startColor = c.IsConnected() ? gameManager.lineColorConnected : gameManager.lineColorDisconnected;
             line.endColor = line.startColor;
         }
 

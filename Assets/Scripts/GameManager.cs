@@ -19,10 +19,7 @@ public class GameManager : MonoBehaviour
     public Color lineColorConnected;
     public Color lineColorDisconnected;
     
-    public Sprite progressbarCompleted;
-    public Sprite progressbarUncompleted;
     private GameObject NextLevelButton;
-
     private static AudioSource Source;
     private bool canPlayWinSound = true;
     public AudioClip ModuleConnectedSound;
@@ -64,14 +61,11 @@ public class GameManager : MonoBehaviour
 
     public void NextLevelButtonClick()
     {
-        if (CurrentLevel - 1 == Levels.Count)
-            SceneManager.LoadScene("Menu");
-        
         PlayerPrefs.SetInt("level", CurrentLevel + 1);
         PlayerPrefs.SetInt("highestLevel", CurrentLevel > HighestLevel ? CurrentLevel : HighestLevel);
         PlayerPrefs.Save();
-        
-        SceneManager.LoadScene("Game");
+
+        SceneManager.LoadScene(CurrentLevel == Levels.Count ? "Menu" : "Game");
     }
 
     public void ChangeScene(string sceneName)
@@ -81,8 +75,9 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
-        if (canPlayWinSound) PlaySound(WinSound);
+        if (!canPlayWinSound) return;
         
+        PlaySound(WinSound);
         IsWin = true;
         NextLevelButton.SetActive(true);
         canPlayWinSound = false;

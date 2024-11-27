@@ -8,7 +8,6 @@ namespace Classes
     {
         public GameObject ConnectionFrom;
         public GameObject ConnectionTo;
-        public GameObject ObjectToCheck;
         public float RequiredDistance;
         public bool MustBeSmaller;
         
@@ -16,11 +15,10 @@ namespace Classes
         private LineRenderer Line;
         public bool StateChanged;
     
-        public Connection(GameObject connectionFrom, GameObject connectionTo, GameObject objectToCheck, float requiredDistance, bool mustBeSmaller)
+        public Connection(GameObject connectionFrom, GameObject connectionTo, float requiredDistance, bool mustBeSmaller)
         {
             ConnectionFrom = connectionFrom;
             ConnectionTo = connectionTo;
-            ObjectToCheck = objectToCheck;
             RequiredDistance = requiredDistance;
             MustBeSmaller = mustBeSmaller;
         }
