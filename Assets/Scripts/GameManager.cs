@@ -46,12 +46,8 @@ public class GameManager : MonoBehaviour
             .Select(t => t.gameObject)
             .ToArray();
         
-        foreach (var c in checkboxes[0].GetComponent<ConnectionManager>().Connections)
-        {
-            if (c.IsConnected() == false) return false;
-        }
-
-        return true;
+        var checks = checkboxes[0].GetComponent<ConnectionManager>().Connections;
+        return checks.Count(e => e.IsConnected()) == checks.Count();
     }
 
     public static void PlaySound(AudioClip sound)
