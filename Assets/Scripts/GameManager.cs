@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public List<GameObject> Levels;
     private int CurrentLevel;
-    public static bool IsWin = false;
+    private int HighestLevel;
+    public static bool IsWin;
     
     public float topBorder;
     public float downBorder;
@@ -23,20 +24,17 @@ public class GameManager : MonoBehaviour
     private GameObject NextLevelButton;
 
     private static AudioSource Source;
+    private bool canPlayWinSound = true;
     public AudioClip ModuleConnectedSound;
     public AudioClip WinSound;
-
-    private bool canPlayWinSound = true;
-
+    
     private void Start()
     {
         IsWin = false;
         Source = GetComponent<AudioSource>();
-        CurrentLevel = (PlayerPrefs.HasKey("level") ? PlayerPrefs.GetInt("level") : 1);
+        CurrentLevel = PlayerPrefs.HasKey("level") ? PlayerPrefs.GetInt("level") : 1;
 
-        foreach (var l in Levels)
-            l.SetActive(false);
-        
+        foreach (var l in Levels) l.SetActive(false);
         Levels[CurrentLevel - 1].SetActive(true);
         
         NextLevelButton = GameObject.FindGameObjectWithTag("Finish");
@@ -65,6 +63,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("Menu");
         
         PlayerPrefs.SetInt("level", CurrentLevel + 1);
+        PlayerPrefs.SetInt("highestLevel", CurrentLevel > HighestLevel ? CurrentLevel : HighestLevel);
         PlayerPrefs.Save();
         
         SceneManager.LoadScene("Game");

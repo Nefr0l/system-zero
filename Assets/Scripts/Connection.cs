@@ -32,7 +32,6 @@ namespace Classes
 
         public void PlayConnectionSound()
         {
-            Debug.Log("Sound played");
             AudioSource source = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
 
             if (source.isPlaying == false && !GameManager.IsWin) 

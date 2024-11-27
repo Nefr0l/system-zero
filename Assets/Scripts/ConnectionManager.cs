@@ -15,7 +15,6 @@ public class ConnectionManager : MonoBehaviour
         foreach (var c in Connections)
         {
             c.LineObject = new GameObject("Line_" + 1);
-            c.LineObject.SetActive(false);
             c.LineObject.transform.SetParent(transform); 
             c.LineObject.AddComponent<LineRenderer>();
 
@@ -27,11 +26,8 @@ public class ConnectionManager : MonoBehaviour
             line.material = new Material(Shader.Find("Sprites/Default"));
             line.startWidth = 0.1f;
             line.endWidth = line.startWidth;
-            
-            c.LineObject.SetActive(true);
+            line.enabled = false;
         }
-        
-        HideLines();
     }
 
     public void ShowLines()
