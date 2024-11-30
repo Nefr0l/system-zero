@@ -60,9 +60,12 @@ public class ConnectionManager : MonoBehaviour
                 c.PlayConnectionSound();
                 c.StateChanged = false;
             }
-            
+
+            var previousLineColor = line.startColor;
             line.startColor = c.IsConnected() ? gameManager.lineColorConnected : gameManager.lineColorDisconnected;
             line.endColor = line.startColor;
+
+            if (previousLineColor != line.startColor) c.StateChanged = true;
         }
 
         if (gameManager.WinCheck()) gameManager.Win();

@@ -17,17 +17,21 @@ public class MenuManager : MonoBehaviour
     public AudioMixer fxMixer;
     public AudioMixer musicMixer;
     
+    public GameObject BypassText;
+    
     private void Start()
     {
         HidePanels();
         InitializePanels();
         ShowPanel(panels[0]);
 
-        HighestLevel = PlayerPrefs.HasKey("highestLevel") ? PlayerPrefs.GetInt("highestLevel") : 1;
+        HighestLevel = PlayerPrefs.HasKey("highestLevel") ? PlayerPrefs.GetInt("highestLevel") : 0;
         for (int i = 0; i < levelButtons.Count; i++)
         {
             if (i > HighestLevel) levelButtons[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "x";
         }
+        
+        BypassText.SetActive(HighestLevel == 9);
         
         float fxVolume = PlayerPrefs.HasKey("fxVolume") ? PlayerPrefs.GetFloat("fxVolume") : 0.75f;
         fxSlider.value = fxVolume;
