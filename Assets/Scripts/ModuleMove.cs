@@ -30,24 +30,22 @@ public class ModuleMove : MonoBehaviour
     private void OnMouseDrag()
     {
         if (GameManager.IsWin) return;
-        connectionManager.UpdateLines(gameObject);
         
-        Vector2 cursorPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint);
-        Vector2 objectPosition = cursorPosition;
-                
-        float cursorX = cursorPosition.x;
-        float cursorY = cursorPosition.y;
+        Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
+        Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint);
+        Vector3 objectPosition = cursorPosition;
 
-        if (cursorX < gameManager.leftBorder + offset) objectPosition.x = gameManager.leftBorder + offset;
-        if (cursorX > gameManager.rightBorder - offset) objectPosition.x = gameManager.rightBorder - offset;
-        if (cursorY < gameManager.downBorder + offset) objectPosition.y = gameManager.downBorder + offset;
-        if (cursorY > gameManager.topBorder - offset) objectPosition.y = gameManager.topBorder - offset;
+        if (objectPosition.x < gameManager.leftBorder + offset) objectPosition.x = gameManager.leftBorder + offset;
+        if (objectPosition.x > gameManager.rightBorder - offset) objectPosition.x = gameManager.rightBorder - offset;
+        if (objectPosition.y < gameManager.downBorder + offset) objectPosition.y = gameManager.downBorder + offset;
+        if (objectPosition.y > gameManager.topBorder - offset) objectPosition.y = gameManager.topBorder - offset;
 
-        Vector2 newPos = new Vector2(CanMoveX ? objectPosition.x : transform.position.x,
-            CanMoveY ? objectPosition.y : transform.position.y);
+        float newX = CanMoveX ? objectPosition.x : transform.position.x;
+        float newY = CanMoveY ? objectPosition.y : transform.position.y;
+        Vector3 newPos = new Vector3(newX, newY, 0);
         
         transform.position = newPos;
+        connectionManager.UpdateLines(gameObject);
     }
 
 }
