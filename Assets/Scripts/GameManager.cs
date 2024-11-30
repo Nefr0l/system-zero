@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
         IsWin = false;
         Source = GetComponent<AudioSource>();
         CurrentLevel = PlayerPrefs.HasKey("level") ? PlayerPrefs.GetInt("level") : 1;
+        HighestLevel = PlayerPrefs.HasKey("highestLevel") ? PlayerPrefs.GetInt("highestLevel") : 1;
 
         foreach (var l in Levels) l.SetActive(false);
         Levels[CurrentLevel - 1].SetActive(true);
@@ -58,7 +60,7 @@ public class GameManager : MonoBehaviour
     public void NextLevelButtonClick()
     {
         PlayerPrefs.SetInt("level", CurrentLevel + 1);
-        PlayerPrefs.SetInt("highestLevel", CurrentLevel > HighestLevel ? CurrentLevel : HighestLevel);
+        PlayerPrefs.SetInt("highestLevel", Math.Max(HighestLevel, CurrentLevel));
         PlayerPrefs.Save();
 
         SceneManager.LoadScene(CurrentLevel == Levels.Count ? "Menu" : "Game");
